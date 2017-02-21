@@ -1,0 +1,4 @@
+graft templates
+graft static
+include connectdatabase.py
+include models.py
