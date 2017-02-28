@@ -5,9 +5,16 @@
 {% if stories.count()!=0 %}
 <table>
 <thead><tr>
-{% for field in stories[0].__dict__['_data'] %}
-<th>{{field}}</th>
-{%endfor%}</tr></thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Text</th>
+<th>Criteria</th>
+<th>Value</th>
+<th>Estimation</th>
+<th>Status</th>
+</tr>
+</thead>
 <tbody>
 {% for story in stories %}
 <tr>
@@ -15,12 +22,12 @@
 <td>{{story.title}}</td>
 <td>{{story.text}}</td>
 <td>{{story.criteria}}</td>
-<td>{{story.value}}</td>
+<td>{{story.business_value}}</td>
 <td>{{story.estimation}}</td>
 <td>{{story.status}}</td>
 <td><form action="/story/{{story.id}}"><input type="image" src="../static/PENCIL.png" height="20" alt="Edit"/></form></td>
 <td><form action="/delete/{{story.id}}" method=post><input type="image" src="../static/ERASER.png" height="20" alt="Delete"></form></td></tr>
 {%endfor%}</tbody></table>
 {%endif%}
-<form action="{{url_for('form')}}">
+<form action="{{url_for('add_new_story')}}">
 <input type="submit" value="Create"/></form></body></html>
