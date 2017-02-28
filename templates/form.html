@@ -2,7 +2,7 @@
 <html><head><title>Super Sprinter 3000</title></head>
 <body background="../static/sky.jpeg" style="font-family:courier;color:white">
 <h1>User Story Manager - {{header}}</h1>
-<form action="/story/{{story.id}}" method="POST">
+<form action="/story" method="POST">
 <label for="title">Story Title</label><textarea name='title' id="title" rows="1" cols="80" required>{{story.title}}</textarea><br>
 <label for="text">User Story</label><textarea name='text' id="text" rows="6" cols="80" required>{{story.text}}</textarea><br>
 <label for="criteria">Acceptance Criteria</label><textarea name="criteria" id="criteria" rows="6" cols="80" required>{{story.criteria}}</textarea><br>
